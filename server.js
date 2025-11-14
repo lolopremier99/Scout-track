@@ -1,17 +1,14 @@
 const express = require("express");
-const path = require("path");
 const app = express();
 
-// Sert les fichiers statiques (HTML, CSS, JS, images, etc.)
-app.use(express.static(path.join(__dirname)));
+// Dossier qui contient ton HTML, CSS, images
+app.use(express.static("public"));
 
-// Route par défaut
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+app.get("/hello", (req, res) => {
+  res.send("Bonjour Grand Maître 👑 depuis ton serveur !");
 });
 
-// Utilise le port fourni par Render ou 3000 en local
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`✅ Serveur du Grand Maître en écoute sur le port ${PORT}`);
+  console.log(`Serveur lancé sur le port ${PORT}`);
 });
