@@ -1,0 +1,22 @@
+{
+  "name": "Environment Grand Maitre",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.tabSize": 2,
+        "files.autoSave": "afterDelay",
+        "workbench.colorTheme": "Default Dark+"
+      },
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "ritwickdey.LiveServer"
+      ]
+    }
+  },
+
+  "postCreateCommand": "npm install",
+
+  "forwardPorts": [3000]
+}
