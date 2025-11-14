@@ -1,5 +1,23 @@
 {
   "editor.wordWrap": "on",
   "terminal.integrated.fontSize": 14,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+
+    "locale": "fr",
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.renderWhitespace": "trailing",
+    "editor.linkedEditing": true,
+    "editor.occurrencesHighlight": "off",
+    "editor.suggest.insertMode": "replace",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "files.autoSave": "onFocusChange",
+    "explorer.autoReveal": false,
+    "workbench.tree.indent": 15,
+    "workbench.tree.renderIndentGuides": "always",
+    "git.autofetch": true,
+    "emmet.triggerExpansionOnTab": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
 }

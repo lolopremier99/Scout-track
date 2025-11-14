@@ -11,5 +11,12 @@
     <p>Ceci est rendu depuis GitHub Codespaces avec CSS.</p>
     <p>modification de la page pour test  </p>
     <img src="public/images/mael-balland-7rImz-goqfQ-unsplash.jpg" alt="Logo du Grand Maître" width="300">
+    <script>
+        // Récupère la date de dernière modification du document
+        const lastModified = new Date(document.lastModified);
+        // Formatage simple en français
+        document.getElementById('lastModified').textContent = 
+            `Dernière modification : ${lastModified.toLocaleString('fr-FR')}`;
+    </script>
 </body>
 </html>
