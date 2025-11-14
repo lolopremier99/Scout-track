@@ -16,7 +16,7 @@
     }
   },
 
-  "postCreateCommand": "npm install && node server.js",
+  "postCreateCommand": "npm install && node server.js && cp .devcontainer/keybindings.json /home/vscode/.config/Code/User/keybindings.json",
 
   "forwardPorts": [3000]
 }
