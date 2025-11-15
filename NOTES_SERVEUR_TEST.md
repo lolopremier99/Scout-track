@@ -6,6 +6,7 @@ Dans le fichier package.json, il y a un script :  "scripts": {
   il se lance en tapant dans un terminal : npm run dev. 
   qui se traduit par Node Package Management execute le script dev. 
   Il y a deux type de serveurs : production et dévelopement (voir si-dessous). Le serveur de développement se met à jour à chaque modification des fichiers. 
+  
   ### 1. Serveur de développement
 - Se met à jour automatiquement à chaque modification des fichiers (avec nodemon)  
 - Affiche beaucoup de logs pour faciliter le debug  

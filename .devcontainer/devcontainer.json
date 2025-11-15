@@ -1,5 +1,5 @@
 {
-  "name": "Environment Grand Maitre",
+  "name": "Environment Olivier",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
 
   "customizations": {
