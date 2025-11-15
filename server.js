@@ -17,7 +17,7 @@ const ip = Object.values(os.networkInterfaces())
   .flat()
   .filter(i => i?.family === "IPv4" && !i.internal)[0]?.address;
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Serveur lancé sur le port ${PORT}`);
   console.log(`Local: http://localhost:${PORT}`);
   if (ip) console.log(`Réseau local: http://${ip}:${PORT}`);

@@ -16,5 +16,3 @@ COPY . .
 # 6. Exposer le port 3000 (serveur Express)
 EXPOSE 3000
 
-# 7. Lancer ton serveur Node
-CMD ["node", "server.js"]
