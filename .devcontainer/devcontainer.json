@@ -16,5 +16,11 @@
     }
   },
 
+  "postCreateCommand": "npm install",
+
+  "containerEnv": {
+    "PORT": "3000"
+  },
+
   "forwardPorts": [3000]
 }
