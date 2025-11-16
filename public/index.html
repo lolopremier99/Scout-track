@@ -1,22 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Codespaces</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Accueil + Connexion</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello Grand Maître 👑</h1>
-    <p>Ceci est rendu depuis GitHub Codespaces avec CSS. 09h39</p>
-    <p>modification de la page pour test  </p>
-    <img src="public/images/mael-balland-7rImz-goqfQ-unsplash.jpg" alt="Logo du Grand Maître" width="300">
-    <script>
-        // Récupère la date de dernière modification du document
-        const lastModified = new Date(document.lastModified);
-        // Formatage simple en français
-        document.getElementById('lastModified').textContent = 
-            `Dernière modification : ${lastModified.toLocaleString('fr-FR')}`;
-    </script>
+
+  <header>
+    <div class="logo">MonSite</div>
+  </header>
+
+  <!-- SECTION PRINCIPALE -->
+  <section class="main-section">
+
+    <!-- Présentation (visible seulement sur PC/Tablette) -->
+    <div class="presentation">
+      <h1>SCOUTOMATOS</h1>
+      <p>
+        Découvrez une expérience fluide, moderne et sécurisée.  
+        Connectez-vous pour accéder à votre espace personnel.
+      </p>
+    </div>
+
+    <!-- Connexion (toujours centré) -->
+    <div class="login-container">
+      <h2>Connexion</h2>
+      <div id="error" class="error"></div>
+
+      <form id="loginForm">
+        <input type="text" name="username" placeholder="Login ou Email" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit">Se connecter</button>
+      </form>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MonSite</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const errorDiv = document.getElementById("error");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errorDiv.textContent = "";
+
+      const formData = new FormData(form);
+      const username = formData.get("username");
+      const password = formData.get("password");
+
+      try {
+        const response = await fetch("/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ username, password })
+        });
+
+        const text = await response.text();
+
+        if (text.includes("Connexion réussie") || text.includes("redirect")) {
+          window.location.href = "/dashboard";
+        } else {
+          errorDiv.textContent = text;
+        }
+
+      } catch (err) {
+        errorDiv.textContent = "Erreur serveur, réessayez.";
+      }
+    });
+  </script>
+
 </body>
 </html>
